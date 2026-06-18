@@ -20,6 +20,91 @@
   --color-text-muted: #b8a898;
 }
 
+[data-palette="sage"] {
+  --color-bg: #f1f0e8;
+  --color-surface: #e6e4d8;
+  --color-border: #d2cfbe;
+  --color-accent: #7a8c6b;
+  --color-text: #272a22;
+  --color-text-muted: #565f4a;
+}
+[data-palette="sage"][data-theme="dark"] {
+  --color-bg: #1b1d17;
+  --color-surface: #262920;
+  --color-border: #363a2d;
+  --color-accent: #93a982;
+  --color-text: #e6e8dc;
+  --color-text-muted: #aab298;
+}
+
+[data-palette="clay"] {
+  --color-bg: #f6ece6;
+  --color-surface: #ecdcd1;
+  --color-border: #dcc2b0;
+  --color-accent: #a8512f;
+  --color-text: #2e1f18;
+  --color-text-muted: #6b4a3a;
+}
+[data-palette="clay"][data-theme="dark"] {
+  --color-bg: #211712;
+  --color-surface: #2d211a;
+  --color-border: #403025;
+  --color-accent: #d97a52;
+  --color-text: #f0ddd2;
+  --color-text-muted: #c2a08c;
+}
+
+[data-palette="ochre"] {
+  --color-bg: #f7f1e3;
+  --color-surface: #ece3c8;
+  --color-border: #d9c89e;
+  --color-accent: #b8862e;
+  --color-text: #2b2415;
+  --color-text-muted: #6b5a35;
+}
+[data-palette="ochre"][data-theme="dark"] {
+  --color-bg: #201b10;
+  --color-surface: #2c2517;
+  --color-border: #443a21;
+  --color-accent: #d9a647;
+  --color-text: #f1e7cf;
+  --color-text-muted: #c4b48a;
+}
+
+[data-palette="slate"] {
+  --color-bg: #eef0f0;
+  --color-surface: #e1e5e5;
+  --color-border: #c9d0d0;
+  --color-accent: #4f7d80;
+  --color-text: #1f2728;
+  --color-text-muted: #4c5c5d;
+}
+[data-palette="slate"][data-theme="dark"] {
+  --color-bg: #161b1b;
+  --color-surface: #202828;
+  --color-border: #313d3d;
+  --color-accent: #6fa3a6;
+  --color-text: #dde6e6;
+  --color-text-muted: #a3b6b6;
+}
+
+[data-palette="plum"] {
+  --color-bg: #f3eceb;
+  --color-surface: #e8dcda;
+  --color-border: #d4c0bd;
+  --color-accent: #8f4a5a;
+  --color-text: #2a1c1f;
+  --color-text-muted: #5e3f44;
+}
+[data-palette="plum"][data-theme="dark"] {
+  --color-bg: #1d1517;
+  --color-surface: #281d20;
+  --color-border: #3a2a2d;
+  --color-accent: #b97185;
+  --color-text: #ece1e0;
+  --color-text-muted: #b89a9c;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);

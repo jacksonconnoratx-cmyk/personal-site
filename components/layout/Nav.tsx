@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import PaletteSelector from "@/components/ui/PaletteSelector";
 
 const links = [
   { href: "/", label: "Home" },
@@ -34,15 +35,18 @@ export default function Nav() {
           </Link>
         ))}
       </div>
-      <motion.button
-        type="button"
-        aria-label="Toggle dark mode"
-        whileTap={{ scale: 0.9 }}
-        onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-        className="rounded-md border border-border px-3 py-1 text-sm text-text"
-      >
-        {mounted ? (resolvedTheme === "dark" ? "Light" : "Dark") : "Theme"}
-      </motion.button>
+      <div className="flex items-center gap-2">
+        <PaletteSelector />
+        <motion.button
+          type="button"
+          aria-label="Toggle dark mode"
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+          className="rounded-md border border-border px-3 py-1 text-sm text-text"
+        >
+          {mounted ? (resolvedTheme === "dark" ? "Light" : "Dark") : "Theme"}
+        </motion.button>
+      </div>
     </nav>
   );
 }

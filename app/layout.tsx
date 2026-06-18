@@ -3,6 +3,18 @@ import { Fraunces, DM_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import ThemeProvider from "@/components/layout/ThemeProvider";
 import Nav from "@/components/layout/Nav";
+import { palettes, defaultPalette } from "@/lib/themes";
+
+const paletteSlugs = palettes.map((palette) => palette.slug);
+
+const setPaletteScript = `(function() {
+  try {
+    var stored = window.localStorage.getItem("palette");
+    var valid = ${JSON.stringify(paletteSlugs)};
+    var palette = valid.indexOf(stored) !== -1 ? stored : ${JSON.stringify(defaultPalette)};
+    document.documentElement.setAttribute("data-palette", palette);
+  } catch (e) {}
+})();`;
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -27,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fraunces.variable} ${dmSans.variable} antialiased`}>
+        <script dangerouslySetInnerHTML={{ __html: setPaletteScript }} />
         <ThemeProvider>
           <Nav />
           {children}
