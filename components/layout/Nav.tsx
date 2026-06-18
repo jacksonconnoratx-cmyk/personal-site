@@ -17,6 +17,7 @@ export default function Nav() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- mount-detection avoids SSR/client theme mismatch
     setMounted(true);
   }, []);
 
