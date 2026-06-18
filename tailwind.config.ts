@@ -14,8 +14,11 @@ const config: Config = {
         surface: "var(--color-surface)",
         border: "var(--color-border)",
         accent: "var(--color-accent)",
+        "accent-light": "var(--color-accent-light)",
+        "accent-dark": "var(--color-accent-dark)",
         text: "var(--color-text)",
         "text-muted": "var(--color-text-muted)",
+        "text-subtle": "var(--color-text-subtle)",
       },
       fontFamily: {
         heading: ["var(--font-fraunces)", "serif"],

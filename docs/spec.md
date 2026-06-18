@@ -9,7 +9,7 @@ A personal portfolio site with blog, project showcase, and progress tracking das
 
 | Layer | Choice | Reason |
 |---|---|---|
-| Framework | Next.js 14 (App Router) | SSR, protected routes, API endpoints, markdown blog |
+| Framework | Next.js 16 (App Router) | SSR, protected routes, API endpoints, markdown blog |
 | Styling | Tailwind CSS + CSS custom properties | Utility-first + themeable design tokens |
 | Animations | Framer Motion | Handles everything from fade-ins to drag-and-drop |
 | Auth | Auth.js (NextAuth v5) | Protects /dashboard and entry forms |
@@ -59,6 +59,14 @@ A personal portfolio site with blog, project showcase, and progress tracking das
 - One accent color (terracotta) used for links, highlights, chart bars, hover states
 - Subtle grain texture overlay via SVG filter (optional, adds depth)
 - Generous whitespace — don't crowd components
+
+### Palette Picker
+Visitors can switch the site's color scheme via a pixel-art-style swatch picker in the nav. Terracotta is the default; five additional palettes (sage, clay, ochre, slate, plum) are available, each with its own light/dark token set.
+
+- Implemented via a `data-palette` attribute on `<html>`, kept **independent** of `next-themes`' `data-theme` attribute (which still only controls light/dark) — this avoids fighting next-themes' single-axis theme model.
+- Palette choice persists to `localStorage` and is applied via a blocking inline script in `app/layout.tsx` before paint, same FOUC-avoidance trick `next-themes` uses for `data-theme`.
+- Source of truth: `lib/themes.ts` (palette definitions + preview swatches) and `styles/globals.css` (the actual `[data-palette="x"]` CSS variable blocks — kept in parity with `lib/themes.ts` by hand, not generated).
+- UI: `components/ui/PaletteSelector.tsx`, wired into `components/layout/Nav.tsx` next to the dark-mode toggle.
 
 ---
 

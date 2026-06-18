@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code
+.claude/settings.local.json
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
